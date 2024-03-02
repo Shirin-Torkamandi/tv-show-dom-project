@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TV SHOW</title>
+    <link rel="shortcut icon" href="./img/play-button.png" type="image/png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,13 +15,64 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
-    
+  </head>
+  <body>
+    <nav class="mx-auto col-lg-6 col-md-7 col-sm-8">
+      <h1><span>TV</span>SHOW</h1>
+      <div class="wrapper">
+        <input type="search" placeholder="Search movie" aria-label="Search" />
+        <i class="ri-search-line"></i>
+        <img src="./img/play-button.png" alt="play-button" />
+      </div>
+    </nav>
+    <main class="mx-auto col-lg-6 col-md-7 col-sm-8">
+      <img
+        src="./img/wp2624645-ezio-auditore-wallpaper2.jpg"
+        alt="ezio-auditore-wallpaper"
+      />
+      <div class="my-4">Movies</div>
+      <section id="section-in-Main">
+      </section>
+    </main>
+    <section id="section-with-figuresinit">
+      <figure>
+        <img class="mx-2" src="./img/home.png" alt="Home-icon" />
+        <figcaption class="text-center">Home</figcaption>
+      </figure>
+      <figure>
+        <img class="mx-3" src="./img/burn.jpg" alt="burn-icon" />
+        <figcaption class="text-center">Trending</figcaption>
+      </figure>
+      <figure>
+        <i class="bi bi-suit-heart mx-3" alt="heart-icon"></i>
+        <figcaption class="text-center">Favorite</figcaption>
+      </figure>
+      <figure>
+        <img class="mx-2" src="./img/user.png" alt="login-icon" />
+        <figcaption class="text-center">Login</figcaption>
+      </figure>
+    </section>
+    <footer class="mx-auto col-lg-6 col-md-7 col-sm-8 my-4">
+      <div id="icons-in-footer">
+        <i class="ri-linkedin-box-fill me-4"></i>
+        <i class="ri-github-fill me-4"></i>
+        <img class="me-4" src="./img/telegram.png" alt="telegram-icon" />
+        <i class="ri-instagram-fill"></i>
+      </div>
+      <p class="my-1">
+        Data sourced from <a href="https://www.tvmaze.com/">TVMaze.com</a>
+      </p>
+      <p class="mb-0 cookie-regular">
+        ៚This page is coded by "Shirin Torkamandi"♡
+      </p>
+    </footer>
 
-
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./main.js"></script>
     <!-- no work with down here!! -->
     <script
@@ -28,5 +80,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-</body>
+  </body>
 </html>
