@@ -32,7 +32,6 @@ async function showMainInformation(id) {
     return data;
   } catch (error) {
     console.error("Error fetching show information:", error);
-    // Handle errors gracefully, e.g., display a placeholder image.
     return null;
   }
 }
@@ -41,13 +40,17 @@ async function populateRow(row) {
   const div = document.createElement("div");
   div.classList.add("row", "p-0", "row-with-background");
 
-  const elementsToAppend = [];
   for (const element of row) {
     const showData = await showMainInformation(element);
     if (!showData) continue; // Skip if error occurred
 
     const div1 = document.createElement("div");
     div1.classList.add("col", "me-2", "mb-2", "p-0", "div-1-in-main");
+
+    div1.addEventListener("click", () => {
+      window.location.href = "./Episodes.html?id=" + showData.id;
+    });
+
     const img = document.createElement("img");
     img.src = showData.image?.medium || "placeholder.jpg"; // Use placeholder if no image
 
@@ -63,13 +66,29 @@ async function populateRow(row) {
     p2.innerText = showData.rating?.average || "No rating";
     div2.append(h6, p, p2);
     div1.append(img, div2);
-    elementsToAppend.push(div1);
+
+    div.append(div1);
   }
 
-  div.append(...elementsToAppend);
   sectionInMain.append(div);
 }
 
 ids.forEach(async (row) => {
   await populateRow(row);
+});
+
+const searchInput = document.querySelector('.wrapper input[type="search"]');
+
+searchInput.addEventListener("keyup", (event) => {
+  const searchTerm = event.target.value.toLowerCase();
+  const visibleMovies = document.querySelectorAll(".div-1-in-main");
+
+  visibleMovies.forEach((movieDiv) => {
+    const movieTitle = movieDiv
+      .querySelector(".div-2-in-main h6")
+      .innerText.toLowerCase();
+    const isPrefixMatch = movieTitle.includes(searchTerm);
+
+    movieDiv.style.display = isPrefixMatch ? "block" : "none";
+  });
 });
