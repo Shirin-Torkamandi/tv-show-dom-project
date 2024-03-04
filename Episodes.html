@@ -19,23 +19,24 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./Episodes.css" />
   </head>
   <body>
     <nav class="sticky-top mx-auto col-lg-7 col-md-8 col-sm-9">
       <h1><span>TV</span>SHOW</h1>
       <div class="wrapper">
-        <input type="search" placeholder="Search movie" aria-label="Search" />
-        <i class="ri-search-line"></i>
+        <div class="dropdown dropdown-center">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              All Episodes
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+            </ul>
+        </div>
         <img src="./img/play-button.png" alt="play-button" />
       </div>
     </nav>
     <main class="mx-auto col-lg-6 col-md-7 col-sm-8">
-      <img
-        src="./img/wp2624645-ezio-auditore-wallpaper2.jpg"
-        alt="ezio-auditore-wallpaper"
-      />
-      <div class="my-4">Movies</div>
       <section id="section-in-Main">
       </section>
     </main>
@@ -73,7 +74,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./main.js"></script>
+    <script src="./Episodes.js"></script>
     <!-- no work with down here!! -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
